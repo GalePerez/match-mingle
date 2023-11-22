@@ -1,0 +1,34 @@
+body {
+    background: #ffebee;
+
+}
+
+.cover-photo img {
+    position: relative;
+    width: 100vw;
+    z-index: -1;
+}
+
+.title {
+    position: absolute;
+    top: 22vh;
+    left: 10vw;
+    font-size: 2.5rem;
+}
+.subtext {
+    position: absolute;
+    top: 30vh;
+    left: 10vw;
+    font-size: 1.5rem;
+}
+
+.art {
+    position: absolute;
+    top: 20vh;
+    right: 8vw;
+    width: 50vw;
+    height: 55vh;
+}
+.stuff {
+    position: static;
+}
