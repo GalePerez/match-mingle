@@ -16,14 +16,12 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Have an account?</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn bg-light" href="#">Log-in</a>
+                <a class="nav-link btn bg-light" href="login.php">Log-in</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn bg-light" href="#">Sign Up</a>
+                <a class="nav-link btn bg-light" href="register.php">Sign Up</a>
               </li>
             </ul>
           </div>
