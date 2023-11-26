@@ -48,14 +48,6 @@
         <div class="art-container">
           <img src="src/art.png" class="art">
         </div>
-
-        
-        <div class="stuff">
-            <p><a href="profile.html">View Profile</a></p>
-            <p><a href="people.html">Browse People</a></p>
-            <p><a href="chat.html">Chat</a></p>
-        </div>
-
       </main>
 </body>
 </html>
