@@ -1,0 +1,28 @@
+.navbutton {
+    padding: 12.5px 30px;
+    width: 100px;
+    border: 0;
+    text-align: center;
+    border-radius: 100px;
+    background-color: #91ac81;
+    color: #ffffff;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    margin-right: 10px;
+  }
+  
+  .navbutton:hover {
+    background-color: #fd4a65;
+    box-shadow: 0 0 20px #6fc5ff50;
+    transform: scale(1.1);
+    color: white;
+  }
+  
+  .navbutton:active {
+    background-color: #fd4a65;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+  }
