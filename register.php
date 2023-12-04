@@ -42,10 +42,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 </head>
+<body style="background-color: #ffeff2">
   <div class="container-login mt-5">
     <div class="row justify-content-center">
       <div class="col-xl-4 col-lg-5 col-md-5">
-        <div class="card shadow-sm my-5">
+        <div class="card shadow-sm my-5 p-3">
           <div class="card-body p-0">
             <div class="row">
               <div class="col-lg-12">
@@ -70,7 +71,7 @@
                   <input type = "text" class="form-control" name = "lname" placeholder="Last Name">
                   </div>                  
                   <div class="form-group">
-                  <button type="submit" name="submit" class="form-control btn btn-danger">REGISTER</button>
+                  <button type="submit" name="submit" class="form-control btn" style="background-color: #fd4a65 ; color: white">REGISTER</button>
                   </div>
                 </form>
              

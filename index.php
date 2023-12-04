@@ -40,9 +40,12 @@
                      looking for.Meet them today!</p>
             </div>
             <div class="button-container">
-              <button class="button">
-                <span class="button-content">Get Started!</span>
-              </button>
+              <a href="login.php">
+                <button class="button">
+                  <span class="button-content">Get Started!</span>
+                </button>
+              </a>
+
             </div>
         </div>
         <div class="art-container">
