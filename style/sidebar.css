@@ -48,13 +48,13 @@ body.dark {
   top: 0;
   left: 0;
   height: 100%;
-  width: 200px;
+  width: 220px;
   background: var(--sidebar-color);
   transition: var(--tran-05);
   z-index: 100;
 }
 .sidebar.close {
-  width: 80px;
+  width: 88px;
 
 
 }
@@ -125,7 +125,7 @@ header .image-text .name {
 .sidebar header .toggle {
   position: absolute;
   top: 50%;
-  right: -25px;
+  right: -20px;
   transform: translateY(-50%) rotate(180deg);
   height: 40px;
   width: 40px;
