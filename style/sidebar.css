@@ -8,9 +8,9 @@
 
 :root {
   /* ===== Colors ===== */
-  --body-color: #e4e9f7;
-  --sidebar-color: #fff;
-  --primary-color: rgb(250, 79, 207);
+  --body-color: #ffeff2;
+  --sidebar-color: #f8dade;
+  --primary-color: #FD4A65;
   --primary-color-light: #f6f5ff;
   --toggle-color: #ddd;
   --text-color: #707070;
@@ -48,7 +48,7 @@ body.dark {
   top: 0;
   left: 0;
   height: 100%;
-  width: 220px;
+  width: 200px;
   background: var(--sidebar-color);
   transition: var(--tran-05);
   z-index: 100;
@@ -127,8 +127,8 @@ header .image-text .name {
   top: 50%;
   right: -25px;
   transform: translateY(-50%) rotate(180deg);
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
   background-color: var(--primary-color);
   color: var(--sidebar-color);
   border-radius: 50%;
@@ -163,12 +163,12 @@ header .image-text .name {
 }
 
 .sidebar li a:hover {
-  background-color: var(--primary-color);
+  background-color: #c2dcb3;
 
 }
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text {
-  color: var(--sidebar-color);
+  color: white;
 }
 body.dark .sidebar li a:hover .icon,
 body.dark .sidebar li a:hover .text {
