@@ -15,7 +15,7 @@
     $stmt->execute();
 
       echo 'REGISTERED SUCCESSFULLY';
-      header("Location: login.php");
+      header("Location: profile.php");
 
   }
 
