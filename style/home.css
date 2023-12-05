@@ -1,10 +1,10 @@
 .profile-container {
     margin: 40px;
-    background-color: pink;
+    background-color: #f8dade;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 60vh;
+    height: 65vh;
     border-radius: 20px;
 }
 
@@ -18,13 +18,19 @@
 }
 
 .container-2 {
-    border: solid rgb(166, 132, 138);
+    border: solid rgb(226, 207, 210);
     width: 100%;
     padding: 20px;
 }
 .container-3{
- background-color: rgb(129, 129, 131);
+    background-color: rgb(194, 194, 194);
+    padding: 10px;
+    border-radius: 20px;
+}
 
+.container-4 {
+    width: 35vw;
+    padding: 20px;
 }
 
 .profile-photo {

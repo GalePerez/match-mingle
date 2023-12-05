@@ -70,9 +70,10 @@
       </image>
       <div class="upload-container">
           <form action="/profile/upload" method="post" enctype="multipart/form-data">
-            <input type="file" name="profileImage" accept="image/*">
-            <br>
-            <input type="submit" value="Upload">
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Select Profile</label>
+              <input class="form-control" type="file" id="formFile">
+            </div>
           </form>
         </div>
         <div class="gender">
@@ -86,21 +87,25 @@
       </div>
     </div>
     <div class="container-2">
-      <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+      <div class="row g-3">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Name">
+        </div>
       </div>
       <div>
-        <label for="name">Address</label>
-        <input type="text" id="name" name="name" required>
+        <div class="mb-3">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" class="form-control" id="address" placeholder="Address">
+        </div>
         <div class="container-3">
-          <div>
-            <label for="name">Hobbies</label>
-            <input type="text" id="name" name="name" required>
+          <div class="mb-3">
+            <label for="hobbies" class="form-label">Hobbies:</label>
+            <textarea class="form-control" id="hobbies" rows="1"></textarea>
           </div>
-          <div>
-            <label for="name">About Me</label>
-            <input type="text" id="name" name="name" required>
+          <div class="mb-3">
+            <label for="hobbies" class="form-label">About Me:</label>
+            <textarea class="form-control" id="hobbies" rows="3"></textarea>
           </div>
           <div>
             <label for="birthday">Birthday:</label>
@@ -110,9 +115,10 @@
       </div>
     </div>
     <div class="container-4">
-      <label for="profileImages">Images</label>
-      <input type="file" id="profileImages" name="profileImages" accept="image/*" multiple required>
-      
+      <div class="mb-3">
+        <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+        <input class="form-control" type="file" id="formFileMultiple" multiple>
+      </div>
     </div>
   </div>
   <button>Submit</button>
