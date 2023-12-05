@@ -1,43 +1,112 @@
-.profile-container {
-    margin: 40px;
-    background-color: #f8dade;
+a {
+    text-decoration: none;
+    color: #545454;
+}
+
+a:hover{
+    color: #303030;
+}
+
+.main-container {
+    height: 80vh;
+    width: 90%;
+    padding: 10px;
+    margin-left: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    height: 65vh;
-    border-radius: 20px;
 }
 
 .container-1 {
-   padding: 20px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+    background-color: #fd4a6599;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
 }
 
 .container-2 {
-    border: solid rgb(226, 207, 210);
-    width: 100%;
-    padding: 20px;
+    background-color: #FFEFF2;
+    width: 50%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+
 }
-.container-3{
-    background-color: rgb(194, 194, 194);
+
+.container-3 {
+    background-color: #91AC81;
+    height: 50%;
+    margin: 10px;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .container-4 {
-    width: 35vw;
-    padding: 20px;
+    background-color: #F3C4CB;
+    height: 50%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-.profile-photo {
-    width: 200px;
-    border-radius: 50%;
-}
 
-.upload-container {
-    margin-top: 30px;
-}
+.home {
+    position: absolute;
+    top: 0;
+    top: 0;
+    left: 200px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+  }
+  .home .text {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 12px 60px;
+  }
+  
+  .sidebar.close ~ .home {
+    left: 78px;
+    height: 100vh;
+    width: calc(100% - 78px);
+  }
+  
+
+  /* animations */
+  .container-1:hover {
+    width: 100%;
+    height: 100%;
+    animation: pulse 1.1s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+        width: 50%;
+        height: 100%;
+    }
+    50% {
+        width: 52%;
+        height: 102%;
+    }
+    100% {
+        width: 50%;
+        height: 100%;
+    }
+  }

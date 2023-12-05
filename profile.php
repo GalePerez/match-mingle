@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style/sidebar.css">
-    <link rel="stylesheet" href="/style/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <style>
+      <?php include "./style/sidebar.css" ?>
+      <?php include "./style/profile.css" ?>
+    </style>
+  </head>
 <body>
 <nav class="sidebar close">
   <header>
@@ -27,14 +29,14 @@
 
       <ul class="menu-links">
         <li class="nav-link">
-          <a href="#">
+          <a href="home.php">
             <i class="fa-solid fa-house fa-lg" style="color: #738f63;"></i>
             <span class="text nav-text">Home</span>
           </a>
         </li>
 
         <li class="nav-link">
-          <a href="#">
+          <a href="profile.php">
             <i class="fa-solid fa-user fa-lg" style="color: #738f63;"></i>
             <span class="text nav-text">Profile</span>
           </a>
@@ -107,21 +109,19 @@
             <label for="aboutme" class="form-label">About Me:</label>
             <textarea class="form-control" id="aboutme" rows="3"></textarea>
           </div>
-          <div>
-            <label for="birthday">Birthday:</label>
-            <input type="date" id="birthday" name="birthday" required>
-          </div>
         </div>
       </div>
     </div>
     <div class="container-4">
       <div class="mb-3">
-        <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+        <label for="formFileMultiple" class="form-label">Gallery - Select Multiple</label>
         <input class="form-control" type="file" id="formFileMultiple" multiple>
       </div>
     </div>
   </div>
-  <button>Submit</button>
+  <div class="submit-btn">
+      <button class="btn">Submit</button>
+  </div>
 </section>
 
 <script>
