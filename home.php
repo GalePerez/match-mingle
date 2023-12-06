@@ -4,7 +4,7 @@
   <div class="text">Home</div>
   <div class="main-container">
     <div class="container-1">
-      <a href="profile.php">
+      <a href="matchmake.php">
         <div class="match-box">
           <div>
             <img src="./src/home_photos/matchmake.png" style="height: 250px; width: 250px;" class="matchmake-img" />
