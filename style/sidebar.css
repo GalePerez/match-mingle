@@ -59,7 +59,6 @@ body.dark {
 
 }
 
-/* ===== Reusable code - Here ===== */
 .sidebar li {
   height: 50px;
   list-style: none;
@@ -91,6 +90,10 @@ ol ,ul {
 .sidebar .icon {
   color: var(--text-color);
   transition: var(--tran-03);
+}
+
+.fa-solid {
+  margin: 10px;
 }
 
 .sidebar .text {

@@ -6,7 +6,7 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <section class="home">
-  <div class="text">Profile Creation</div>
+  <div class="text">Profile</div>
   <div class="profile-container">
     <div class="container-1">
       <div class="profile-photo-container">
