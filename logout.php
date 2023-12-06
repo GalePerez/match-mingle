@@ -1,7 +1,6 @@
 <?php
 include 'connection.php';
-
-session_unset();
-session_destroy();
-header("Location: index.html");
+unset($_SESSION['id']);
+unset($_SESSION['username']);
+header("Location: index.php");
 ?>

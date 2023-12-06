@@ -1,90 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-      <?php include "./style/sidebar.css" ?>
-      <?php include "./style/profile.css" ?>
-    </style>
-  </head>
-<body>
-<nav class="sidebar close">
-  <header>
-    <div class="image-text">
-      <div class="text logo-text">
-        <span class="name">MatchMingle</span>
-        <span class="name">Welcome, User!</span>
-      </div>
-    </div>
+<?php include 'header.php'; ?>
 
-  <i class="fa-solid fa-chevron-right fa-2xs toggle" style="color: #ffffff;"></i>
-  </header>
-
-  <div class="menu-bar">
-    <div class="menu">
-
-      <ul class="menu-links">
-        <li class="nav-link">
-          <a href="home.php">
-            <i class="fa-solid fa-house fa-lg" style="color: #738f63;"></i>
-            <span class="text nav-text">Home</span>
-          </a>
-        </li>
-
-        <li class="nav-link">
-          <a href="profile.php">
-            <i class="fa-solid fa-user fa-lg" style="color: #738f63;"></i>
-            <span class="text nav-text">Profile</span>
-          </a>
-        </li>
-
-
-        <li class="nav-link">
-          <a href="#">
-            <i class="fa-solid fa-comment fa-lg" style="color: #738f63;"></i>
-            <span class="text nav-text">Chat</span>
-          </a>
-        </li>
-
-        <li class="nav-link">
-          <a href="#">
-            <i class="fa-solid fa-right-from-bracket fa-lg" style="color: #738f63;"></i>
-            <span class="text nav-text">Log-out</span>
-          </a>
-        </li>
-
-      </ul>
-    </div>
-    </div>
-  </div>
-</nav>
+<link rel="stylesheet" href="<?php echo BASE_URL ?>style/profile.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <section class="home">
   <div class="text">Profile Creation</div>
   <div class="profile-container">
     <div class="container-1">
-      <image>
-        <img src="src/profile.jpg" class="profile-photo">
-      </image>
-      <div class="upload-container">
-          <form action="/profile/upload" method="post" enctype="multipart/form-data">
+      <div class="profile-photo-container">
+        <img src="<?php echo $userData['profile_pic'] ?>" class="profile-photo" id="profilePreview">
+        <div class="upload-container">
+          <form method="post" enctype="multipart/form-data">
             <div class="mb-3">
-              <label for="formFile" class="form-label">Select Profile</label>
-              <input class="form-control" type="file" id="formFile">
+              <label for="profileImage" class="form-label">Select Profile</label>
+              <input class="form-control" type="file" id="profileImage" accept="image/*" onchange="previewProfileImage()">
             </div>
           </form>
         </div>
-        <div class="gender">
-          <h5>Gender:</h5>
-          <label>
-            <input type="radio" name="gender" value="male"> Male
+      </div>
+      <div class="gender">
+        <h5>Gender:</h5>
+        <label>
+          <input type="radio" name="gender" value="male" class="gender-radio-male"> Male
         </label>
         <label>
-            <input type="radio" name="gender" value="female"> Female
+          <input type="radio" name="gender" value="female" class="gender-radio-female"> Female
         </label>
       </div>
     </div>
@@ -92,62 +34,133 @@
       <div class="row g-3">
         <div class="mb-3">
           <label for="name" class="form-label">Name:</label>
-          <input type="text" class="form-control" id="name" placeholder="Name">
+          <input type="text" class="form-control" id="name" placeholder="Name" value="<?php echo $userData['name'] ?>">
         </div>
       </div>
       <div>
         <div class="mb-3">
           <label for="address" class="form-label">Address</label>
-          <input type="text" class="form-control" id="address" placeholder="Address">
+          <input type="text" class="form-control" id="address" placeholder="Address" value="<?php echo $userData['address'] ?>">
         </div>
-        <div class="container-3">
+        <div class="container-3" style="display: block; height: 70%;">
           <div class="mb-3">
             <label for="hobbies" class="form-label">Hobbies:</label>
-            <textarea class="form-control" id="hobbies" rows="1"></textarea>
+            <select class="form-control" id="hobbies" name="hobbies[]" multiple="multiple">
+              <option value="sleeping" <?php echo (isset($userData['hobbies']['sleeping']) ? 'selected' : ''); ?>>Sleeping</option>
+              <option value="eating" <?php echo (isset($userData['hobbies']['eating']) ? 'selected' : ''); ?>>Eating</option>
+            </select>
           </div>
           <div class="mb-3">
             <label for="aboutme" class="form-label">About Me:</label>
-            <textarea class="form-control" id="aboutme" rows="3"></textarea>
+            <select class="form-control" id="aboutme" name="aboutme[]" multiple="multiple">
+              <option value="I am good person" <?php echo (isset($userData['about_me']['I am good person']) ? 'selected' : ''); ?>>I am a good person</option>
+              <option value="I love anime" <?php echo (isset($userData['about_me']['I love anime']) ? 'selected' : ''); ?>>I love anime</option>
+            </select>
           </div>
         </div>
       </div>
     </div>
     <div class="container-4">
       <div class="mb-3">
-        <label for="formFileMultiple" class="form-label">Gallery - Select Multiple</label>
-        <input class="form-control" type="file" id="formFileMultiple" multiple>
+        <label for="galleryImages" class="form-label">Gallery - Select Multiple</label>
+        <input class="form-control" type="file" id="galleryImages" multiple accept="image/*">
       </div>
     </div>
   </div>
   <div class="submit-btn">
-      <button class="btn">Submit</button>
+    <button class="btn" id="submit-btn">Submit</button>
   </div>
+
 </section>
 
+
+
+
 <script>
-  const body = document.querySelector('body'),
-    sidebar = body.querySelector('nav'),
-    toggle = body.querySelector(".toggle"),
-    searchBtn = body.querySelector(".search-box"),
-    modeSwitch = body.querySelector(".toggle-switch"),
-    modeText = body.querySelector(".mode-text");
-  toggle.addEventListener("click", () => {
-    sidebar.classList.toggle("close");
-  })
-  searchBtn.addEventListener("click", () => {
-    sidebar.classList.remove("close");
+  var input = document.getElementById("profileImage");
+  var preview = document.getElementById("profilePreview");
+  var profilePic;
+
+  function previewProfileImage() {
+
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        preview.src = e.target.result;
+        profilePic = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $(document).ready(function() {
+    $('#hobbies').select2();
+    $('#aboutme').select2();
+
+    $("#submit-btn").on('click', function() {
+      let fgender, mgender;
+      let name = $("#name").val();
+      let address = $("#address").val();
+      let hobbies = ($('#hobbies').val());
+      let aboutme = ($('#aboutme').val());
+      let hobbiesObject = {};
+      for (let i = 0; i < hobbies.length; i++) {
+        hobbiesObject[hobbies[i]] = hobbies[i];
+      }
+      let aboutmeObject = {};
+      for (let i = 0; i < aboutme.length; i++) {
+        aboutmeObject[aboutme[i]] = aboutme[i];
+      }
+      if ($(".gender-radio-female").prop("checked")) {
+        fgender = $(".gender-radio-female").val();
+      }
+      if ($(".gender-radio-male").prop("checked")) {
+        mgender = $(".gender-radio-male").val();
+      }
+
+      let data = {
+        name: name,
+        address: address,
+        hobbies: hobbiesObject,
+        aboutme: aboutmeObject,
+        fgender: fgender,
+        mgender: mgender,
+        profilePic
+      };
+
+      $.ajax({
+        type: "POST",
+        url: "<?php echo BASE_URL ?>save_profile_data.php",
+        data: data,
+        success: function(response) {
+          response = JSON.parse(response);
+          if (response.status == 200) {
+            alert("Data Updated Successfully");
+          } else if (response.status == 400) {
+            alert(response.message);
+          }
+        },
+        error: function(jqXHR) {
+          if (jqXHR.status > 200) {
+            try {
+              var errorResponse = JSON.parse(jqXHR.responseText);
+              if (errorResponse.message) {
+                alert(errorResponse.message);
+              } else {
+                alert("An error occurred, but no specific message was provided.");
+              }
+            } catch (e) {
+              alert("Error parsing the error response.");
+            }
+          } else {
+            alert("An unexpected error occurred. Please try again later.");
+          }
+        }
+      });
+
+    });
+
   });
 </script>
-<script>
-  function submitForm() {
 
-      const gender = document.querySelector('input[name="gender"]:checked');
-
-      // Display the result
-      const result = "Gender: " + (gender ? gender.value : "Not selected");
-      alert(result); // You can replace this with your desired logic to handle the result.
-  }
-</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-</body>
-</html>
+<?php include 'footer.php'; ?>
