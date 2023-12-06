@@ -27,7 +27,7 @@ $userData['about_me'] = json_decode($userData['about_me'],true);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="<?php echo BASE_URL ?>style/sidebar.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL ?>style/home.css">
+
 </head>
 <body>
     <nav class="sidebar close">
