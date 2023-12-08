@@ -1,4 +1,4 @@
-<?php include 'connection.php' ?>
+<?php include 'includes/connection.php' ?>
 <?php
 
 if (isset($_POST['submit'])) {
@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     $pos = 'Employee';
     $pass = password_hash($passs, PASSWORD_DEFAULT);
 
-    if (empty($users) || empty($passs)  || empty($fnames)  || empty($mnames) || empty($lnames)) {
+    if (empty($users) || empty($passs) || empty($fnames) || empty($mnames) || empty($lnames)) {
       echo '<script>alert("Please Fill all fields"); window.location = "register.php";</script>';
       exit();
     }
@@ -95,7 +95,8 @@ if (isset($_POST['submit'])) {
                       <input type="text" class="form-control" name="lname" placeholder="Last Name">
                     </div>
                     <div class="form-group">
-                      <button type="submit" name="submit" class="form-control btn" style="background-color: #fd4a65 ; color: white">REGISTER</button>
+                      <button type="submit" name="submit" class="form-control btn"
+                        style="background-color: #fd4a65 ; color: white">REGISTER</button>
                     </div>
                   </form>
 

@@ -1,5 +1,7 @@
 <?php
 session_start();
+define("BASE_URL", "http://localhost/matchmingle/");
+define("UPLOAD_URL", $_SERVER['DOCUMENT_ROOT'] . "/matchmingle/uploads/");
 $conn = mysqli_connect("localhost", "root", "", "matchmingle");
 if (!$conn) {
 	die("Error! Couldn't connect. " . mysqli_connect_error());
@@ -39,8 +41,20 @@ function Secure($string, $censored_words = 0, $br = true, $strip = 0)
 		$censored_words = @explode(",", $config['censored_words']);
 		foreach ($censored_words as $censored_word) {
 			$censored_word = trim($censored_word);
-			$string        = str_replace($censored_word, '****', $string);
+			$string = str_replace($censored_word, '****', $string);
 		}
 	}
 	return $string;
+}
+
+
+function generateRandomString($length = 10)
+{
+	$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	$charactersLength = strlen($characters);
+	$randomString = '';
+	for ($i = 0; $i < $length; $i++) {
+		$randomString .= $characters[random_int(0, $charactersLength - 1)];
+	}
+	return $randomString;
 }
