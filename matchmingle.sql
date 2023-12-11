@@ -32,7 +32,7 @@ CREATE TABLE `matches` (
   `male_user_id` int NOT NULL,
   `female_user_id` int NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `matches`
@@ -49,21 +49,21 @@ INSERT INTO `matches` (`id`, `male_user_id`, `female_user_id`, `created_at`) VAL
 
 CREATE TABLE `users` (
   `User_ID` int NOT NULL,
-  `Username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Fname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Mname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Lname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Position` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `hobbies` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `about_me` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `profile_pic` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `gallery_pic_1` longtext COLLATE utf8mb4_general_ci NOT NULL,
-  `gallery_pic_2` longtext COLLATE utf8mb4_general_ci NOT NULL,
-  `gender` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `Username` varchar(50) CHARACTER SET utf8mb4  NOT NULL,
+  `Password` varchar(255) CHARACTER SET utf8mb4  NOT NULL,
+  `Fname` varchar(50) CHARACTER SET utf8mb4  NOT NULL,
+  `Mname` varchar(50) CHARACTER SET utf8mb4  NOT NULL,
+  `Lname` varchar(50) CHARACTER SET utf8mb4  NOT NULL,
+  `Position` varchar(50) CHARACTER SET utf8mb4  NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4  NOT NULL,
+  `address` text CHARACTER SET utf8mb4  NOT NULL,
+  `hobbies` text CHARACTER SET utf8mb4  NOT NULL,
+  `about_me` text CHARACTER SET utf8mb4  NOT NULL,
+  `profile_pic` longtext CHARACTER SET utf8mb4  NOT NULL,
+  `gallery_pic_1` longtext  NOT NULL,
+  `gallery_pic_2` longtext  NOT NULL,
+  `gender` varchar(255) CHARACTER SET utf8mb4  NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `users`
