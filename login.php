@@ -1,4 +1,4 @@
-<?php include 'connection.php' ?>
+<?php include 'includes/connection.php' ?>
 
 <?php
 if (isset($_POST['submit'])) {
@@ -16,6 +16,7 @@ if (isset($_POST['submit'])) {
     if (password_verify($pass, $data['Password'])) {
       $_SESSION['username'] = $data['Username'];
       $_SESSION['id'] = $data['User_ID'];
+      $_SESSION['user'] = $data;
       header("Location: home.php");
       exit();
     } else {
@@ -69,7 +70,8 @@ if (isset($_POST['submit'])) {
                       <input onkeyup="Secure()" type="password" class="form-control" name="pass" placeholder="Password">
                     </div>
                     <div class="form-group">
-                      <button type="submit" name="submit" class="form-control btn" style="background-color: #fd4a65 ; color: white">LOGIN</button>
+                      <button type="submit" name="submit" class="form-control btn"
+                        style="background-color: #fd4a65 ; color: white">LOGIN</button>
                     </div>
                   </form>
 

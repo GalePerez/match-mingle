@@ -2,7 +2,6 @@
 
 include 'connection.php';
 
-define("BASE_URL" , "http://localhost/matchmingle/");
 
 if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
 } else {
@@ -10,11 +9,12 @@ if (isset($_SESSION['username']) && isset($_SESSION['id'])) {
     exit();
 }
 
-$sql = "SELECT * FROM `users` WHERE `User_ID` = '".$_SESSION['id']."'";
+$sql = "SELECT * FROM `users` WHERE `User_ID` = '" . $_SESSION['id'] . "'";
 $result = mysqli_query($conn, $sql);
 $userData = mysqli_fetch_assoc($result);
-$userData['hobbies'] = json_decode($userData['hobbies'],true);
-$userData['about_me'] = json_decode($userData['about_me'],true);
+$userData['hobbies'] = json_decode($userData['hobbies'], true);
+// $userData['about_me'] = json_decode($userData['about_me'], true);
+
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +29,7 @@ $userData['about_me'] = json_decode($userData['about_me'],true);
     <link rel="stylesheet" href="<?php echo BASE_URL ?>style/sidebar.css">
 
 </head>
+
 <body>
     <nav class="sidebar close">
         <header>

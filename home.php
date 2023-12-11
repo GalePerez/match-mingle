@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include 'includes/header.php'; ?>
 <link rel="stylesheet" href="<?php echo BASE_URL ?>style/home.css">
 <section class="home">
   <div class="text">Home</div>
@@ -32,17 +32,17 @@
         <a href="profile.php">
           <div class="chat-box">
             <div>
-                <img src="./src/home_photos/chat.png" style="height: 100px; width: 100px;">
+              <img src="./src/home_photos/chat.png" style="height: 100px; width: 100px;">
             </div>
             <div>
-                <h5>Chat your Match!<h5>
-              </div>
+              <h5>Chat your Match!<h5>
             </div>
           </div>
-        </a>
       </div>
+      </a>
+    </div>
   </div>
 </section>
 
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>
