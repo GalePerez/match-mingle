@@ -48,14 +48,14 @@ $userData['about_me'] = json_decode($userData['about_me'],true);
                 <ul class="menu-links">
                     <li class="nav-link">
                         <a href="home.php">
-                            <i class="fa-solid fa-house fa-lg" style="color: #738f63;"></i>
+                            <img src="./src/icons/home.png" style="width: 25px">
                             <span class="text nav-text">Home</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="profile.php">
-                            <i class="fa-solid fa-user fa-lg" style="color: #738f63;"></i>
+                            <img src="./src/icons/user.png" style="width: 25px">
                             <span class="text nav-text">Profile</span>
                         </a>
                     </li>
@@ -63,14 +63,14 @@ $userData['about_me'] = json_decode($userData['about_me'],true);
 
                     <li class="nav-link">
                         <a href="#">
-                            <i class="fa-solid fa-comment fa-lg" style="color: #738f63;"></i>
+                            <img src="./src/icons/chat.png" style="width: 25px">
                             <span class="text nav-text">Chat</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="logout.php">
-                            <i class="fa-solid fa-right-from-bracket fa-lg" style="color: #738f63;"></i>
+                        <img src="./src/icons/logout.png" style="width: 25px">
                             <span class="text nav-text">Log-out</span>
                         </a>
                     </li>
