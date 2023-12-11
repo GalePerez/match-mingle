@@ -63,7 +63,7 @@ $userData['hobbies'] = json_decode($userData['hobbies'], true);
 
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="chat.php">
                             <img src="./src/icons/chat.png" style="width: 25px">
                             <span class="text nav-text">Chat</span>
                         </a>
