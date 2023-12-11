@@ -62,7 +62,7 @@
               <option value="I love anime" <?php // echo (isset($userData['about_me']['I love anime']) ? 'selected' : ''); ?>>I love anime</option>
             </select> -->
             <textarea name="aboutme" id="aboutme" class="form-control" cols="30"
-              rows="10"><?php echo $userData['about_me'] ?></textarea>
+              rows="5"><?php echo $userData['about_me'] ?></textarea>
           </div>
         </div>
       </div>

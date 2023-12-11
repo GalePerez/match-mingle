@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
       if ($result) {
         $_SESSION['username'] = $users;
         $_SESSION['id'] = mysqli_insert_id($conn);
-        header("Location: home.php");
+        header("Location: profile.php");
         exit();
       } else {
         echo '<script>alert("User could not be created. try again in a moment"); window.location = "register.php";</script>';
