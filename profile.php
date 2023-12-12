@@ -10,14 +10,12 @@
   <div class="profile-container">
     <div class="container-1">
       <div class="profile-photo-container">
-        <img src="<?php echo BASE_URL ?>uploads/<?php echo $userData['profile_pic'] ?>" class="profile-photo"
-          id="profilePreview">
+        <img src="<?php echo BASE_URL ?>uploads/<?php echo $userData['profile_pic'] ?>" class="profile-photo" id="profilePreview">
         <div class="upload-container">
           <form method="post" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="profileImage" class="form-label">Select Profile</label>
-              <input class="form-control" type="file" id="profileImage" accept="image/*"
-                onchange="previewProfileImage('profileImage')">
+              <input class="form-control" type="file" id="profileImage" accept="image/*" onchange="previewProfileImage('profileImage')">
             </div>
           </form>
         </div>
@@ -42,8 +40,7 @@
       <div>
         <div class="mb-3">
           <label for="address" class="form-label">Address</label>
-          <input type="text" class="form-control" id="address" placeholder="Address"
-            value="<?php echo $userData['address'] ?>">
+          <input type="text" class="form-control" id="address" placeholder="Address" value="<?php echo $userData['address'] ?>">
         </div>
         <div class="container-3" style="display: block; height: 70%;">
           <div class="mb-3">
@@ -58,11 +55,12 @@
           <div class="mb-3">
             <label for="aboutme" class="form-label">About Me:</label>
             <!-- <select class="form-control" id="aboutme" name="aboutme[]" multiple="multiple">
-              <option value="I am good person" <?php  // echo (isset($userData['about_me']['I am good person']) ? 'selected' : ''); ?>>I am a good person</option>
-              <option value="I love anime" <?php // echo (isset($userData['about_me']['I love anime']) ? 'selected' : ''); ?>>I love anime</option>
+              <option value="I am good person" <?php  // echo (isset($userData['about_me']['I am good person']) ? 'selected' : ''); 
+                                                ?>>I am a good person</option>
+              <option value="I love anime" <?php // echo (isset($userData['about_me']['I love anime']) ? 'selected' : ''); 
+                                            ?>>I love anime</option>
             </select> -->
-            <textarea name="aboutme" id="aboutme" class="form-control" cols="30"
-              rows="5"><?php echo $userData['about_me'] ?></textarea>
+            <textarea name="aboutme" id="aboutme" class="form-control" cols="30" rows="5"><?php echo $userData['about_me'] ?></textarea>
           </div>
         </div>
       </div>
@@ -70,24 +68,21 @@
     <div class="container-4">
       <div class="mb-3">
         <label for="galleryImages" class="form-label">Gallery - Select Multiple</label>
-        <input class="form-control" type="file" id="galleryImages" onchange="previewProfileImage('galleryImages')"
-          multiple accept="image/png">
+        <input class="form-control" type="file" id="galleryImages" onchange="previewProfileImage('galleryImages')" multiple accept="image/png">
       </div>
       <div class="photos" style="display:flex;">
         <div class="card m-2" style="width: 150px; height: 150px">
           <?php if ($userData['gallery_pic_1'] != "") { ?>
-            <img src="<?php echo BASE_URL ?>uploads/<?php echo $userData['gallery_pic_1'] ?>" class="card-img-top"
-              alt="..." id="profile-pic-1">
+            <img src="<?php echo BASE_URL ?>uploads/<?php echo $userData['gallery_pic_1'] ?>" class="card-img-top" alt="..." id="profile-pic-1">
           <?php } else { ?>
             <img src="<?php echo BASE_URL ?>src/placeholder.png" class="card-img-top" alt="..." id="profile-pic-1">
           <?php } ?>
         </div>
         <div class="card m-2" style="width: 150px; height: 150px">
           <?php if ($userData['gallery_pic_2'] != "") { ?>
-            <img src="<?php echo BASE_URL ?>uploads/<?php echo $userData['gallery_pic_2'] ?>" class="card-img-top"
-              alt="..." id="profile-pic-2">
+            <img src="<?php echo BASE_URL ?>uploads/<?php echo $userData['gallery_pic_2'] ?>" class="card-img-top" alt="..." id="profile-pic-2">
           <?php } else { ?>
-            <img src="<?php echo BASE_URL ?>src/placeholder.png" class="card-img-top" alt="..." id="profile-pic-1">
+            <img src="<?php echo BASE_URL ?>src/placeholder.png" class="card-img-top" alt="..." id="profile-pic-2">
           <?php } ?>
         </div>
         <div>
@@ -121,13 +116,14 @@
   var index = 1;
   var formData = new FormData();
   var ProfileFormData = new FormData();
+
   function previewProfileImage(type) {
 
     if (type == "profileImage") {
       if (input.files && input.files[0]) {
         ProfileFormData.append("profilePic", input.files[0])
         var reader = new FileReader();
-        reader.onload = function (e) {
+        reader.onload = function(e) {
           preview.src = e.target.result;
           profilePic = e.target.result;
         };
@@ -136,15 +132,16 @@
     }
 
     if (type == "galleryImages") {
-      if (galleryImages.files && galleryImages.files[0] && galleryImages.files[1] && galleryImages.files.length === 2) {
+      if (galleryImages.files && galleryImages.files[0] && galleryImages.files[1] && galleryImages.files.length ===
+        2) {
         var reader = new FileReader();
-        reader.onload = function (e) {
+        reader.onload = function(e) {
           profile_pic_1.src = e.target.result;
           gallery_pic_1 = e.target.result;
         };
         reader.readAsDataURL(galleryImages.files[0]);
         var reader = new FileReader();
-        reader.onload = function (e) {
+        reader.onload = function(e) {
           profile_pic_2.src = e.target.result;
           gallery_pic_2 = e.target.result;
         };
@@ -160,11 +157,11 @@
 
   }
 
-  $(document).ready(function () {
+  $(document).ready(function() {
     $('#hobbies').select2();
     // $('#aboutme').select2();
 
-    $("#submit-btn").on('click', function () {
+    $("#submit-btn").on('click', function() {
       let fgender, mgender;
       let name = $("#name").val();
       let address = $("#address").val();
@@ -180,6 +177,7 @@
       // }
       if ($(".gender-radio-female").prop("checked")) {
         fgender = $(".gender-radio-female").val();
+        console.log(fgender)
       }
       if ($(".gender-radio-male").prop("checked")) {
         mgender = $(".gender-radio-male").val();
@@ -208,7 +206,7 @@
         data: ProfileFormData,
         processData: false,
         contentType: false,
-        success: function (response) {
+        success: function(response) {
           response = JSON.parse(response);
           if (response.status == 200) {
             alert("Data Updated Successfully");
@@ -216,14 +214,16 @@
             alert(response.message);
           }
         },
-        error: function (jqXHR) {
+        error: function(jqXHR) {
           if (jqXHR.status > 200) {
             try {
               var errorResponse = JSON.parse(jqXHR.responseText);
               if (errorResponse.message) {
                 alert(errorResponse.message);
               } else {
-                alert("An error occurred, but no specific message was provided.");
+                alert(
+                  "An error occurred, but no specific message was provided."
+                );
               }
             } catch (e) {
               alert("Error parsing the error response.");
@@ -236,14 +236,14 @@
 
     });
 
-    $("#submit-btn-gallery-images").on('click', function () {
+    $("#submit-btn-gallery-images").on('click', function() {
       $.ajax({
         type: "POST",
         url: "<?php echo BASE_URL ?>save_gallery_data.php",
         data: formData,
         processData: false,
         contentType: false,
-        success: function (response) {
+        success: function(response) {
           response = JSON.parse(response);
           if (response.status == 200) {
             alert("Data Updated Successfully");

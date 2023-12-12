@@ -21,7 +21,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $pic_1_tmp_name = $_FILES['profilePic']['tmp_name'];
             $pic_1_name = generateRandomString(20);
             move_uploaded_file($pic_1_tmp_name, UPLOAD_URL . "$pic_1_name.png");
-            $gender = $mgender ? $mgender : $fgender;
+            // $gender = $mgender ? $mgender : $fgender;
+            if ($mgender == "undefined") {
+                $gender = $fgender;
+            } else {
+                $gender = $mgender;
+            }
             $sql = "UPDATE `users` SET `name` = '$name', `address` = '$address', `hobbies` = '$hobbies', `about_me` = '$aboutme', `gender` = '$gender',  `profile_pic` = '$pic_1_name.png' WHERE `User_ID` = '" . $_SESSION['id'] . "'";
             $result = mysqli_query($conn, $sql);
 
