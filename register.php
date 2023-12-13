@@ -26,9 +26,9 @@ if (isset($_POST['submit'])) {
       $sql = "INSERT INTO `users`( `Username`, `Password`, `Fname`, `Mname`, `Lname`, `Position`) VALUES ('$users','$pass','$fnames','$mnames','$lnames','$pos')";
       $result = mysqli_query($conn, $sql);
       if ($result) {
-        $_SESSION['username'] = $users;
-        $_SESSION['id'] = mysqli_insert_id($conn);
-        header("Location: profile.php");
+        // $_SESSION['username'] = $users;
+        // $_SESSION['id'] = mysqli_insert_id($conn);
+        header("Location: login.php");
         exit();
       } else {
         echo '<script>alert("User could not be created. try again in a moment"); window.location = "register.php";</script>';
@@ -95,8 +95,7 @@ if (isset($_POST['submit'])) {
                       <input type="text" class="form-control" name="lname" placeholder="Last Name">
                     </div>
                     <div class="form-group">
-                      <button type="submit" name="submit" class="form-control btn"
-                        style="background-color: #fd4a65 ; color: white">REGISTER</button>
+                      <button type="submit" name="submit" class="form-control btn" style="background-color: #fd4a65 ; color: white">REGISTER</button>
                     </div>
                   </form>
 
